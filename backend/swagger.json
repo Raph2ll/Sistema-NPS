@@ -1,0 +1,190 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "NPS",
+    "description": "Api documentation",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/survey": {
+      "post": {
+        "tags": [
+          "Survey"
+        ],
+        "description": "",
+        "parameters": [],
+        "requestBody": {
+          "description": "Fill in the survey",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Survey"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "_id": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "Product id",
+                      "example": "6360227df0b66d0ab4cf21ca"
+                    },
+                    "createdAt": {
+                      "type": "integer",
+                      "format": "date",
+                      "example": "31-10-2022 16:31:10"
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "John Doe"
+                    },
+                    "email": {
+                      "type": "string",
+                      "example": "JohnDoe@gmail.com"
+                    },
+                    "value": {
+                      "type": "number",
+                      "example": 5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error: Bad Request"
+          }
+        }
+      }
+    },
+    "/nps-calculator": {
+      "get": {
+        "tags": [
+          "NPS-calculator"
+        ],
+        "description": "Return NPS-calculator",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "_id": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "Product id",
+                      "example": "6360227df0b66d0ab4cf21ca"
+                    },
+                    "detractor": {
+                      "type": "integer",
+                      "example": 2
+                    },
+                    "passive": {
+                      "type": "integer",
+                      "example": 0
+                    },
+                    "promoters": {
+                      "type": "integer",
+                      "example": 23
+                    },
+                    "totalAnswers": {
+                      "type": "integer",
+                      "example": 25
+                    },
+                    "nps": {
+                      "type": "integer",
+                      "example": 84
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/nps-calculator/answers": {
+      "get": {
+        "tags": [
+          "NPS-calculator"
+        ],
+        "description": "Return all answers",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "_id": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "Product id",
+                      "example": "6360227df0b66d0ab4cf21ca"
+                    },
+                    "createdAt": {
+                      "type": "integer",
+                      "format": "date",
+                      "example": "31-10-2022 16:31:10"
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "John Doe"
+                    },
+                    "email": {
+                      "type": "string",
+                      "example": "JohnDoe@gmail.com"
+                    },
+                    "value": {
+                      "type": "number",
+                      "example": 5
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Survey": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "John Doe"
+          },
+          "email": {
+            "type": "string",
+            "example": "JohnDoe@gmail.com"
+          },
+          "value": {
+            "type": "number",
+            "example": 5
+          }
+        }
+      }
+    }
+  }
+}
