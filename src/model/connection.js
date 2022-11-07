@@ -1,8 +1,8 @@
 const { MongoClient } = require('mongodb');
 require('dotenv').config();
 
-const MONGO_DB_URL = `mongodb://${process.env.HOST || 'localhost'}:27017/Products`;
-const DB_NAME = 'Products';
+const MONGO_DB_URL = `mongodb://${process.env.HOST || 'localhost'}:27017/nps-calculator`;
+const DB_NAME = 'nps-calculator';
 
 const OPTIONS = {
   useNewUrlParser: true,
