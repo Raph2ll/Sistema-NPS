@@ -26,7 +26,7 @@ Criar uma pesquisa com os seguintes campos: nome, email, value. A APi deve retor
 
 # Dependências
 
-Você precisará de [Git](https://git-scm.com/downloads), e [Mongo](https://www.mongodb.com) e talvez uma chave [SSH](https://docs.github.com/pt/authentication/connecting-to-github-with-ssh/about-ssh).
+Você precisará de [Git](https://git-scm.com/downloads), [Mongo](https://www.mongodb.com) e talvez uma chave [SSH](https://docs.github.com/pt/authentication/connecting-to-github-with-ssh/about-ssh).
 
 
 # Como rodar a aplicação
