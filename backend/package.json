@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/api/server.js --watchAll",
+    "start": "nodemon src/api/server.js",
     "test": "jest --no-cache --watchAll"
   },
   "repository": {
@@ -26,6 +26,7 @@
     "http-status-codes": "^2.2.0",
     "joi": "^17.7.0",
     "mongodb": "^4.11.0",
+    "nodemon": "^2.0.20",
     "swagger-ui": "^4.15.2",
     "swagger-ui-express": "^4.6.0"
   },
