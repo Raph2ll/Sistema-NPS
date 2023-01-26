@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import {
+  Smiley, SmileySad, SmileyMeh, SmileyBlank, SmileyWink,
+} from 'phosphor-react';
 
 function Survey() {
   const [email, setEmail] = useState('');
@@ -61,30 +64,41 @@ function Survey() {
               />
             </label>
           </div>
-          <label htmlFor="select" className="block text-sm font-medium text-gray-900 ">
-            Qual a probabilidade de você nos recomendar a um amigo ou colega ?
-            <select
-              id="select"
-              type="select"
-              name="select"
-              onChange={(e) => setSelect(e.target.value)}
-              className="bg-gray-50 mt-2 border border-gray-300 text-gray-900 mb-6 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-              placeholder="John Doe"
-              required
-            >
-              <option defaultValue>Escolha um número</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
-          </label>
+          <div className="block text-sm  font-medium text-gray-900 ">
+            Qual a probabilidade de você nos recomendar para um colega ?
+            <div className="inline-flex items-center justify-around -space-x-px mt-6 w-full p-2.5 ">
+              <button
+                type="button"
+                onClick={() => setSelect(0)}
+              >
+                <SmileySad size={48} color="#F2385A" />
+              </button>
+              <button
+                type="button"
+                onClick={() => setSelect(0)}
+              >
+                <SmileyMeh size={48} color="#FF801E" />
+              </button>
+              <button
+                type="button"
+                onClick={() => setSelect(7)}
+              >
+                <SmileyBlank size={48} color="#F2C12E" />
+              </button>
+              <button
+                type="button"
+                onClick={() => setSelect(7)}
+              >
+                <Smiley size={48} color="#B0D91E" />
+              </button>
+              <button
+                type="button"
+                onClick={() => setSelect(10)}
+              >
+                <SmileyWink size={48} color="#5DD959" />
+              </button>
+            </div>
+          </div>
           <button
             type="submit"
             className="disabled:bg-slate-50 w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
@@ -92,7 +106,6 @@ function Survey() {
             disabled={!isEnabled}
           >
             Enviar
-
           </button>
         </form>
       </div>
