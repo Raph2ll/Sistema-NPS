@@ -87,7 +87,7 @@ function Survey() {
               </button>
               <button
                 type="button"
-                onClick={() => setSelect(7)}
+                onClick={() => setSelect(10)}
               >
                 <Smiley size={48} color="#B0D91E" />
               </button>
